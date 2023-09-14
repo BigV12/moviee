@@ -2,7 +2,7 @@ import React from "react";
 import { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./movieid.module.scss";
-import logo from "./logo.webp";
+import logo from "./Logo.webp";
 import { BsFillCameraReelsFill } from "react-icons/bs";
 import { BsFillCaretRightSquareFill } from "react-icons/bs";
 import { BsTv } from "react-icons/bs";
