@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+.section_title {
+  //   margin-top: 2rem;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  // position: fixed;
+  h4 {
+    color: #000;
+    font-family: DM Sans;
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    margin-left: 5rem;
+  }
+  a {
+    margin-right: 4rem;
+    color: var(--rose-700, #be123c);
+    font-family: DM Sans;
+    font-size: 1.125rem;
+
+    font-weight: 400;
+    line-height: 1.5rem; /* 133.333% */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.grid_container {
+  // position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  //   align-items: center;
+  flex-wrap: wrap;
+  //   margin-left: 5rem;
+  //   margin-right: 5rem;
+
+  .movie_card {
+    margin-left: 3rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    -webkit-box-shadow: -1px -5px 24px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px -5px 24px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px -5px 24px -10px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .heart {
+      float: right;
+      left: -35px;
+      border: none;
+      margin-top: 1rem;
+      padding: 6px;
+      border-radius: 100px;
+      background-color: #d1d5db;
+      .chk {
+        background-color: red;
+      }
+      position: relative;
+      .heart_icon {
+        // background-color: red;
+        border: none;
+        color: white;
+      }
+    }
+    .release_year {
+      color: var(--gray-400, #9ca3af);
+      font-family: DM Sans;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    h4 {
+      color: var(--gray-900, #111827);
+      font-family: DM Sans;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 10px;
+      padding-left: 0;
+      width: 14rem;
+    }
+
+    .genre {
+      color: var(--gray-400, #9ca3af);
+      font-family: DM Sans;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px;
+      padding-left: 0;
+    }
+    .movie_poster {
+      width: 14rem;
+      height: 22rem;
+      flex-shrink: 0;
+    }
+  }
+}
+.link {
+  text-decoration: none;
+}
+
+//PAGINATION CONTROLS
+
+.pagination_container {
+  // position: fixed;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  button {
+    background-color: #be123c;
+    color: white;
+    padding: 10px;
+    width: 10rem;
+  }
+  span {
+    padding: 10px;
+    font-family: Dm Sans;
+  }
+}
+
+//very SMALL DEVICES
+@media (max-width: 320px) {
+  .section_title {
+    //   margin-top: 2rem;
+
+    h4 {
+      font-size: 1rem;
+
+      margin-left: 1rem;
+    }
+    a {
+      margin-right: 1rem;
+
+      line-height: 1.5rem; /* 133.333% */
+    }
+  }
+
+  .grid_container {
+    margin-top: 1rem;
+
+    .movie_card {
+      margin-left: 1rem;
+
+      .movie_poster {
+        margin-left: 1rem;
+      }
+
+      .release_year {
+        padding: 10px;
+      }
+    }
+  }
+
+  .pagination_container {
+    button {
+      width: 6rem;
+      padding: 5px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .section_title {
+    //   margin-top: 2rem;
+
+    h4 {
+      font-size: 1rem;
+
+      margin-left: 1rem;
+    }
+    a {
+      margin-right: 1rem;
+
+      line-height: 1.5rem; /* 133.333% */
+    }
+  }
+
+  .grid_container {
+    margin-top: 1rem;
+
+    .movie_card {
+      margin-left: 2.5rem;
+
+      .movie_poster {
+        margin-left: 1rem;
+      }
+
+      .release_year {
+        padding: 10px;
+      }
+    }
+  }
+
+  .pagination_container {
+    button {
+      width: 7rem;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+  .section_title {
+    margin-top: 2rem;
+  }
+
+  .grid_container {
+    margin-top: 0rem;
+
+    .movie_card {
+      margin-left: 4rem;
+    }
+  }
+
+  .pagination_container {
+    button {
+      width: 7rem;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .section_title {
+    margin-top: 2rem;
+    h4 {
+      font-size: 1rem;
+
+      margin-left: 1rem;
+    }
+    a {
+      margin-right: 1rem;
+
+      line-height: 1.5rem; /* 133.333% */
+    }
+  }
+
+  .grid_container {
+    margin-top: 0rem;
+
+    .movie_card {
+      margin-left: 4rem;
+    }
+  }
+
+  .pagination_container {
+    button {
+      width: 7rem;
+      padding: 5px;
+    }
+  }
+}

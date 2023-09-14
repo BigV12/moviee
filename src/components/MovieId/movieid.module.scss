@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;600&display=swap");
+
+.main_container {
+  display: flex;
+  flex-direction: row;
+  // SIDE NAV
+  .side_nav {
+    padding-left: 10px;
+    padding-bottom: none;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+    height: 100vh;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 35px;
+    -webkit-box-shadow: -8px 10px 42px -13px rgba(0, 0, 0, 0.97);
+    -moz-box-shadow: -8px 10px 42px -13px rgba(0, 0, 0, 0.97);
+    box-shadow: -8px 10px 42px -13px rgba(0, 0, 0, 0.97);
+
+    img {
+      width: 8rem;
+      padding-top: 20px;
+      padding-right: 20px;
+      margin-bottom: 2rem;
+    }
+    h4 {
+      color: #666;
+      font-family: DM Sans;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.9rem;
+      text-decoration: none;
+      &:hover {
+        color: #be123c;
+      }
+    }
+    .active {
+      border-right: 5px solid #be123c;
+      background-color: #f8c5d2;
+      color: #be123c;
+    }
+  }
+
+  //   VIEWPORT
+  .view_port {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-left: 5rem;
+    .vid {
+      width: 50rem;
+      height: 15rem;
+      align-self: center;
+      padding: 10px;
+    }
+    .movie_title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .details_container {
+      display: flex;
+      flex-direction: row;
+      padding: 5px;
+      .info {
+        .description {
+          margin-top: 2rem;
+          width: 45rem;
+          margin-top: 0rem;
+          font-family: DM Sans;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+        .cast {
+          margin-top: 0rem;
+          p {
+            margin-top: 1rem;
+            font-family: DM Sans;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          span {
+            color: #be123c;
+            font-family: DM Sans;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+        .number {
+          background-color: #be123c;
+          color: white;
+          padding: 10px;
+          margin-top: 0.5rem;
+          width: 10rem;
+          border-radius: 6px;
+        }
+      }
+      .ad {
+        display: flex;
+        flex-direction: column;
+
+        .showtime {
+          background-color: #be123c;
+          color: white;
+          text-decoration: none;
+          padding: 8px;
+          font-family: DM Sans;
+          border-radius: 5px;
+          width: 12rem;
+          text-align: center;
+          font-size: 14px;
+
+          .ticket {
+            margin-bottom: -4px;
+          }
+        }
+
+        .more {
+          background-color: #f1cbd5;
+          color: grey;
+          text-decoration: none;
+          padding: 8px;
+          font-family: DM Sans;
+          border-radius: 5px;
+          width: 12rem;
+          text-align: center;
+          margin-top: 1rem;
+          font-weight: 600;
+          border: 1px solid #be123c;
+          font-size: 14px;
+          .list {
+            margin-bottom: -3px;
+            padding-right: 5px;
+          }
+        }
+        .moreimg {
+          width: 14rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.star {
+  color: yellow;
+  padding-right: 5px;
+  padding-top: 3px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+@media (max-width: 320px) {
+  .main_container {
+    flex-direction: column;
+    .side_nav {
+      padding-left: 0px;
+      padding-bottom: none;
+      flex-direction: row;
+      height: 6rem;
+      width: 26rem;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+
+      img {
+        display: none;
+      }
+      .stay {
+        padding-right: 7px;
+      }
+      h4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 0.9rem;
+        text-decoration: none;
+      }
+      .active {
+        border-bottom: 5px solid #be123c;
+        border-right: none;
+      }
+    }
+
+    //   VIEWPORT
+    .view_port {
+      padding: 1rem;
+      margin-left: 0rem;
+      .vid {
+        width: 22rem;
+        height: 15rem;
+        align-self: center;
+        padding: 10px;
+        margin-left: 6rem;
+      }
+      .movie_title {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        p {
+          margin-left: 0.2rem;
+        }
+        h4 {
+          padding-left: 10px;
+        }
+      }
+
+      .details_container {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .info {
+          .description {
+            margin-top: 2rem;
+            width: 24rem;
+            margin-top: 0rem;
+            font-family: DM Sans;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          .cast {
+            margin-top: 0rem;
+            p {
+              margin-top: 1rem;
+              font-family: DM Sans;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+        }
+        .ad {
+          display: flex;
+          flex-direction: column;
+
+          .showtime {
+            margin-top: 1rem;
+            width: 10rem;
+            .ticket {
+              margin-bottom: -4px;
+              margin-top: 1rem;
+            }
+          }
+
+          .more {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .link {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .main_container {
+    flex-direction: column;
+    .side_nav {
+      padding-left: 0px;
+      padding-bottom: none;
+      flex-direction: row;
+      height: 6rem;
+      width: 26rem;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+
+      img {
+        display: none;
+      }
+      .stay {
+        padding-right: 7px;
+      }
+      h4 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 0.9rem;
+        text-decoration: none;
+      }
+      .active {
+        border-bottom: 5px solid #be123c;
+        border-right: none;
+      }
+    }
+
+    //   VIEWPORT
+    .view_port {
+      padding: 1rem;
+      margin-left: 0rem;
+      .vid {
+        width: 22rem;
+        height: 15rem;
+        align-self: center;
+        padding: 10px;
+        margin-left: 4rem;
+      }
+      .movie_title {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        p {
+          margin-left: 0.2rem;
+        }
+        h4 {
+          padding-left: 10px;
+        }
+      }
+
+      .details_container {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .info {
+          .description {
+            margin-top: 2rem;
+            width: 24rem;
+            margin-top: 0rem;
+            font-family: DM Sans;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          .cast {
+            margin-top: 0rem;
+            p {
+              margin-top: 1rem;
+              font-family: DM Sans;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+        }
+        .ad {
+          display: flex;
+          flex-direction: column;
+
+          .showtime {
+            margin-top: 1rem;
+            width: 10rem;
+            margin-left: 4rem;
+            .ticket {
+              margin-bottom: -4px;
+              margin-top: 1rem;
+            }
+          }
+
+          .more {
+            margin-top: 1rem;
+            margin-left: 4rem;
+          }
+          .moreimg {
+            margin-left: 4rem;
+          }
+        }
+      }
+    }
+  }
+  .link {
+    margin-top: 1rem;
+  }
+  .number {
+    margin-left: 4rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .main_container {
+    // SIDE NAV
+    .side_nav {
+      padding-left: 5px;
+      display: flex;
+      height: 200vh;
+
+      img {
+        width: 8rem;
+        padding-top: 20px;
+        padding-right: 20px;
+        margin-bottom: 2rem;
+      }
+      h4 {
+        color: #666;
+        font-family: DM Sans;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 0.9rem;
+        text-decoration: none;
+        &:hover {
+          color: #be123c;
+        }
+      }
+      .active {
+        border-right: 5px solid #be123c;
+        background-color: #f8c5d2;
+        color: #be123c;
+      }
+    }
+
+    //   VIEWPORT
+    .view_port {
+      display: flex;
+      flex-direction: column;
+      padding: 0rem;
+      margin-left: 0rem;
+      .vid {
+        width: 20rem;
+        height: 15rem;
+        align-self: flex-start;
+        padding: 10px;
+      }
+      h4 {
+        margin-left: 1rem;
+      }
+      p {
+        padding-left: 5px;
+      }
+      .movie_title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .details_container {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .info {
+          .description {
+            margin-top: 2rem;
+            width: 20rem;
+            margin-top: 0rem;
+            font-family: DM Sans;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          .cast {
+            margin-top: 0rem;
+            p {
+              margin-top: 1rem;
+              font-family: DM Sans;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+            span {
+              color: #be123c;
+              font-family: DM Sans;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+          .number {
+            margin-left: 4rem;
+          }
+        }
+        .ad {
+          display: flex;
+          flex-direction: column;
+
+          .showtime {
+            margin-left: 4rem;
+            width: 10.5rem;
+            margin-top: 1rem;
+
+            .ticket {
+              margin-bottom: -4px;
+            }
+          }
+
+          .more {
+            margin-left: 4rem;
+
+            .list {
+              margin-bottom: -3px;
+              padding-right: 5px;
+            }
+          }
+          .moreimg {
+            width: 14rem;
+            margin-top: 1rem;
+            margin-left: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
