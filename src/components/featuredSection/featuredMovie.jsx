@@ -92,7 +92,11 @@ function FeaturedMovies() {
                 <FaRegHeart className={styles.heart_icon} />
               </button>
 
-              <Link to={`/id/${item.id}`} key={item.id} className={styles.link}>
+              <Link
+                to={`/movies/${item.id}`}
+                key={item.id}
+                className={styles.link}
+              >
                 <img
                   src={`${baseImageUrl}${item.poster_path}`}
                   alt=""
