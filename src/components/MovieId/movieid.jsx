@@ -116,7 +116,7 @@ function Movieid() {
           <img src={`${baseImageUrl}${vid}`} alt="" className={styles.vid} />
           <div className={styles.movie_title}>
             <h4 data-testid="movie-title"> {title} </h4>
-            <h4> {year}</h4>
+            <h4 data-testid='movie-release-date'> {year}</h4>
             <h4>PG-13</h4>
             <h4 data-testid="movie-runtime">{time}</h4>
             <p>{genre}</p>
