@@ -26,6 +26,7 @@ function Movieid() {
   const [vid, setVid] = useState([]);
   const [overview, setOverview] = useState([]);
   const [vote_average, setVote_average] = useState([]);
+  const [error, setError] = useState(null);
 
   const baseImageUrl = "https://image.tmdb.org/t/p/w500";
   const genreMapping = {
@@ -72,7 +73,12 @@ function Movieid() {
         setTitle(response.data.title);
         const releaseDate = new Date(response.data.release_date);
         const utcReleaseDate = releaseDate.toUTCString();
-        setYear(utcReleaseDate);
+
+        const year = new Date(utcReleaseDate).getUTCFullYear();
+
+        console.log(year);
+
+        setYear(year);
         setTime(response.data.runtime);
         // setGenre(response.data.genres);
         setVote(response.data.vote_count);
@@ -116,7 +122,7 @@ function Movieid() {
           <img src={`${baseImageUrl}${vid}`} alt="" className={styles.vid} />
           <div className={styles.movie_title}>
             <h4 data-testid="movie-title"> {title} </h4>
-            <h4 data-testid='movie-release-date'> {year}</h4>
+            <h4 data-testid="movie-release-date"> {year}</h4>
             <h4>PG-13</h4>
             <h4 data-testid="movie-runtime">{time}</h4>
             <p>{genre}</p>

@@ -16,6 +16,8 @@ function FeaturedMovies() {
   const [dataa, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const options = {
@@ -37,10 +39,13 @@ function FeaturedMovies() {
       .request(options)
       .then(function (response) {
         setData(response.data.results.splice(10));
+        setLoading(false);
         setTotalPages(response.data.total_pages);
       })
       .catch(function (error) {
         console.error(error);
+        setLoading(false);
+        setError("Error fetching data. Please try again later.");
       });
   }, [currentPage]);
 
@@ -70,6 +75,14 @@ function FeaturedMovies() {
     alert("Added to Favourites");
   };
   // body function
+
+  if (loading) {
+    return <div className={styles.loader}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>;
+  }
   return (
     <Fragment>
       <section className={styles.featured_section}>
