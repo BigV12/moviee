@@ -15,7 +15,7 @@ function App() {
       {/* <Home /> */}
       <Routes>
         <Route path="*" element={<Home />} />
-        <Route path="/movies/:movieId" element={<Movieid />} />
+        <Route path="/movies/:movie_id" element={<Movieid />} />
       </Routes>
     </Fragment>
   );

@@ -16,7 +16,7 @@ import more from "./more.webp";
 import { Link } from "react-router-dom";
 
 function Movieid() {
-  const { movieId } = useParams();
+  const { movie_id } = useParams();
   const [dataa, setData] = useState([]);
   const [title, setTitle] = useState([]);
   const [year, setYear] = useState([]);
@@ -26,7 +26,6 @@ function Movieid() {
   const [vid, setVid] = useState([]);
   const [overview, setOverview] = useState([]);
   const [vote_average, setVote_average] = useState([]);
-  const [error, setError] = useState(null);
 
   const baseImageUrl = "https://image.tmdb.org/t/p/w500";
   const genreMapping = {
@@ -52,7 +51,7 @@ function Movieid() {
   };
 
   useEffect(() => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}`;
+    const url = `https://api.themoviedb.org/3/movie/${movie_id}`;
     const options = {
       method: "GET",
       url: url,

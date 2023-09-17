@@ -41,6 +41,7 @@ function FeaturedMovies() {
         setData(response.data.results.splice(10));
         setLoading(false);
         setTotalPages(response.data.total_pages);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.error(error);
