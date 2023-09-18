@@ -6,6 +6,7 @@ import styles from "./featuredMovies.module.scss";
 import movieimg from "./movieimg.webp";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa6";
+import { Circles } from "react-loader-spinner";
 
 import axios from "axios";
 import Movieid from "../MovieId/movieid";
@@ -18,6 +19,9 @@ function FeaturedMovies() {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [clickedMovies, setClickedMovies] = useState({});
 
   useEffect(() => {
     const options = {
@@ -72,18 +76,39 @@ function FeaturedMovies() {
     10752: "War",
     37: "Western",
   };
-  const action = () => {
-    alert("Added to Favourites");
-  };
+  // const action = () => {
+  //   alert("Added to Favourites");
+  // };
   // body function
 
   if (loading) {
-    return <div className={styles.loader}>Loading...</div>;
+    return (
+      <div className={styles.loader}>
+        <Circles
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="circles-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
   }
 
   if (error) {
     return <div className={styles.error}>{error}</div>;
   }
+  // const handleButtonClick = () => {
+  //   setIsButtonClicked(!isButtonClicked);
+  // };
+  const handleMovieClick = (id) => {
+    setClickedMovies((prevClickedMovies) => ({
+      ...prevClickedMovies,
+      [id]: !prevClickedMovies[id],
+    }));
+  };
   return (
     <Fragment>
       <section className={styles.featured_section}>
@@ -102,8 +127,17 @@ function FeaturedMovies() {
               className={styles.movie_card}
               data-testid="movie-card"
             >
-              <button className={styles.heart} onClick={action}>
-                <FaRegHeart className={styles.heart_icon} />
+              <button
+                className={`${styles.heart} ${
+                  clickedMovies[item.id] ? styles.clicked : ""
+                }`}
+                onClick={() => handleMovieClick(item.id)}
+              >
+                <FaRegHeart
+                  className={`${styles.heart_icon} ${
+                    clickedMovies[item.id] ? styles.clicked : ""
+                  }`}
+                />
               </button>
 
               <Link

@@ -7,6 +7,7 @@ import { FaSistrix } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
 import ContentLoader from "react-content-loader";
+import { Circles } from "react-loader-spinner";
 
 function NavBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -43,6 +44,11 @@ function NavBar() {
 
     setLoading(false);
   };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
   const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
@@ -60,6 +66,7 @@ function NavBar() {
             type="text"
             value={searchQuery}
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
           />
           <button onClick={handleSearch} className={styles.search_btn}>
             <FaSistrix className={styles.icon} />
@@ -73,13 +80,30 @@ function NavBar() {
       </div>
 
       {/* SEARCHRESULT */}
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <p>
+          {" "}
+          <Circles
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="circles-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </p>
+      )}
 
       {searchResults.map((movie) => (
         <div key={movie.id} className={styles.search}>
-          <img src={`${baseImageUrl}${movie.poster_path}`} alt="" />
-          <p>{movie.title}</p>
-          <p>{movie.release_date}</p>
+          <img
+            src={`${baseImageUrl}${movie.poster_path}`}
+            data-testid="movie-poster"
+            alt=""
+          />
+          <p data-testid=" movie-title">{movie.title}</p>
+          <p data-testid="movie-release-date">{movie.release_date}</p>
         </div>
       ))}
     </Fragment>

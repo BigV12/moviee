@@ -113,6 +113,15 @@
   text-decoration: none;
 }
 
+.clicked {
+  color: red;
+  background-color: red;
+  color: white;
+}
+.clicked .heart_icon {
+  color: red;
+  border-radius: 50%;
+}
 //PAGINATION CONTROLS
 
 .pagination_container {
